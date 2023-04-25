@@ -29,18 +29,20 @@ function fiveHeads() {
             attempts++;
             let result = tossCoin();
             console.log(`${result} was flipped`);
-            if (result === "heads") {
-                headsCount++;
-            } else {
-                headsCount = 0;
-            }
+            result === "heads" ? headsCount++ : headsCount = 0
+            // commented out code below to shorten my code
+            // if (result === "heads") {
+            //     headsCount++;
+            // } else {
+            //     headsCount = 0;
+            // }
         }
         if ( attempts <= maxAttempts ) {
             resolve (` It took ${attempts} tries to get to five heads`)
         }
 
         else {
-            reject (`Attempts exceeded #{maxAttempts}.`)
+            reject (`Attempts exceeded ${maxAttempts}.`)
         }
     });
 }
